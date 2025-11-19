@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
     <title>Yuan Gao - Personal Homepage</title>
+    
+    <!-- 网站图标 (Favicon) - 使用了🎓 Emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+
     <style>
         /* --- Global Styles --- */
         :root {
-            --primary-color: #333;
-            --secondary-color: #666;
-            --accent-color: #0066cc;
+            --primary-color: #222;
+            --secondary-color: #555;
+            --accent-color: #0056b3; /* 深一点的蓝色，更学术 */
             --bg-color: #fdfdfd;
             --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
@@ -26,50 +29,60 @@
 
         /* --- Layout Container --- */
         .container {
-            max-width: 800px;
+            max-width: 820px; /* 稍微宽一点 */
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
-        /* --- Header / Hero Section --- */
+        /* --- Header --- */
         header {
             margin-bottom: 50px;
             border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 5px;
             color: #000;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .social-links {
             margin-bottom: 20px;
         }
 
         .social-links a {
-            margin-right: 15px;
+            margin-right: 18px;
             text-decoration: none;
             color: var(--accent-color);
             font-weight: 500;
+            font-size: 1rem;
         }
 
         .social-links a:hover {
             text-decoration: underline;
         }
 
-        /* --- Navigation (Optional, internal links) --- */
+        /* --- Navigation --- */
         nav {
-            margin-top: 10px;
-            font-size: 0.9rem;
+            margin-top: 15px;
         }
         nav a {
-            margin-right: 15px;
+            margin-right: 20px;
             text-decoration: none;
-            color: var(--secondary-color);
+            color: #666;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         nav a:hover {
             color: var(--accent-color);
@@ -77,70 +90,111 @@
 
         /* --- Section Styles --- */
         section {
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         h2 {
-            font-size: 1.5rem;
-            border-bottom: 2px solid #eee;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #f0f0f0;
             padding-bottom: 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
+            margin-bottom: 25px;
+            color: #111;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #333;
         }
 
         /* --- Content Lists --- */
         .item {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+            margin-bottom: 5px;
         }
 
         .item-title {
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #000;
         }
 
         .item-date {
             font-size: 0.9rem;
-            color: var(--secondary-color);
-            white-space: nowrap;
+            color: #777;
+            font-variant-numeric: tabular-nums;
         }
 
         .item-subtitle {
+            font-size: 1rem;
             font-style: italic;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
+            color: #444;
+            margin-bottom: 8px;
         }
 
         .item-desc {
             font-size: 0.95rem;
+            color: #444;
+        }
+
+        .item-desc ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        
+        .item-desc li {
+            margin-bottom: 5px;
         }
 
         /* --- Publication Styles --- */
-        .pub-item {
+        .pub-year-header {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 30px;
             margin-bottom: 15px;
-            padding-left: 20px;
-            border-left: 3px solid #eee;
+            border-left: 4px solid #ddd;
+            padding-left: 10px;
+        }
+
+        .pub-item {
+            margin-bottom: 20px;
         }
         
         .pub-title {
             font-weight: 600;
-            color: var(--primary-color);
+            color: #000;
+            font-size: 1.05rem;
         }
 
         .pub-authors {
             color: var(--secondary-color);
+            margin: 3px 0;
+            font-size: 0.95rem;
         }
 
         .pub-venue {
             font-style: italic;
-            color: #444;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .pub-tag {
+            display: inline-block;
+            background: #eee;
+            color: #555;
+            font-size: 0.75rem;
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+            font-style: normal;
+            font-weight: 500;
         }
 
         .pub-links a {
@@ -148,30 +202,42 @@
             color: var(--accent-color);
             text-decoration: none;
             margin-right: 10px;
+            font-weight: 600;
+        }
+        
+        .pub-links a:hover {
+            text-decoration: underline;
         }
 
-        /* Highlight your own name in publications */
+        /* Highlight name */
         .me {
-            font-weight: bold;
+            font-weight: 700;
             color: #000;
             text-decoration: underline;
+        }
+
+        /* Equal contribution asterisk */
+        .equal-contrib {
+            color: #666;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
         }
 
         /* --- Footer --- */
         footer {
             text-align: center;
-            font-size: 0.8rem;
-            color: #999;
-            margin-top: 80px;
-            padding-bottom: 20px;
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-top: 100px;
+            padding-bottom: 30px;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 20px;
         }
 
-        /* --- Mobile Responsiveness --- */
         @media (max-width: 600px) {
-            .item-header {
-                flex-direction: column;
-            }
-            h1 { font-size: 2rem; }
+            .item-header { flex-direction: column; }
+            h1 { font-size: 2.2rem; }
+            .container { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -181,20 +247,20 @@
         <!-- HEADER -->
         <header>
             <h1>Yuan Gao</h1>
-            <div class="subtitle">Ph.D. Student / Researcher / Engineer</div>
+            <div class="subtitle">Undergraduate Student @ Shanghai Jiao Tong University</div>
             <div class="social-links">
-                <a href="mailto:itzyog@gmail.com">Email</a>
-                <a href="https://scholar.google.com/citations?hl=zh-CN&user=SaXjgOsAAAAJ" target="_blank">Google Scholar</a>
-                <a href="https://github.com/Yog24" target="_blank">GitHub</a>
-                <!-- <a href="https://twitter.com" target="_blank">Twitter/X</a> -->
-                <a href="path/to/cv.pdf" target="_blank">CV (PDF)</a>
+                <a href="mailto:yoggy23@sjtu.edu.cn">yoggy23@sjtu.edu.cn</a>
+                <!-- 建议补充你的 Google Scholar, GitHub 链接 -->
+                <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="#" target="_blank">CV (PDF)</a>
             </div>
             <nav>
                 <a href="#about">About</a>
-                <a href="#education">Education</a>
+                <a href="#publications">Selected Pubs</a>
                 <a href="#experience">Experience</a>
-                <a href="#selected-pubs">Selected Pubs</a>
-                <a href="#all-pubs">All Pubs</a>
+                <a href="#education">Education</a>
+                <a href="#all-publications">All Pubs</a>
             </nav>
         </header>
 
@@ -202,12 +268,84 @@
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am currently a Ph.D. student at [University Name], advised by Prof. [Advisor Name]. 
-                My research interests include <strong>Artificial Intelligence</strong>, <strong>Computer Vision</strong>, and <strong>Machine Learning</strong>.
+                I am an undergraduate student majoring in <strong>Artificial Intelligence</strong> at 
+                <a href="https://en.sjtu.edu.cn/" style="color:inherit; text-decoration:underline;">Shanghai Jiao Tong University (SJTU)</a>.
+                I am expected to graduate in June 2026.
             </p>
             <p>
-                Previously, I obtained my Bachelor's degree from [University Name]. I am passionate about building systems that can solve real-world problems.
+                My research interests primarily lie in <strong>Multimodal Large Models</strong>, <strong>Out-of-Distribution (OoD) Detection</strong>, and <strong>AI Agents</strong>. 
+                I am passionate about building robust and intelligent systems that can reason and generalize in complex environments.
             </p>
+        </section>
+
+        <!-- SELECTED PUBLICATIONS -->
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            
+            <!-- Paper 1: MRMR -->
+            <div class="pub-item">
+                <div class="pub-title">MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval</div>
+                <div class="pub-authors">
+                    Siyue Zhang*, <span class="me">Yuan Gao*</span>, Xiao Zhou*, Yilun Zhao, Chen Zhao
+                    <span style="font-size:0.85rem; font-weight:normal; color:#666;">(* Equal Contribution)</span>
+                </div>
+                <div class="pub-venue">
+                    In Submission to International Conference on Learning Representations (ICLR), 2026
+                </div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a>
+                    <a href="#">[Project Page]</a>
+                </div>
+            </div>
+
+            <!-- Paper 2: InfoBound -->
+            <div class="pub-item">
+                <div class="pub-title">InfoBound: A Provable Information-Bounds Inspired Framework for Both OoD Generalization and OoD Detection</div>
+                <div class="pub-authors">
+                    Lin Zhu, Yifeng Yang, Zichao Nie, <span class="me">Yuan Gao</span>, Jiarui Li, Qinying Gu, Xinbing Wang, Chenghu Zhou, Nanyang Ye
+                </div>
+                <div class="pub-venue">
+                    IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2024
+                </div>
+                <div class="pub-links">
+                    <a href="#">[Paper]</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h2>Selected Experience</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Chen Zhao’s Lab</span>
+                    <span class="item-date">June 2025 – Present</span>
+                </div>
+                <div class="item-subtitle">Research Assistant</div>
+                <div class="item-desc">
+                    <ul>
+                        <li>Proposed and co-lead an ongoing work on building a dataset for intensive-reasoning retrieval tasks in Multimodal Large Language Models (MLLMs).</li>
+                        <li>Focusing on complex reasoning capabilities and expert-level benchmarks.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Nanyang Ye's Lab</span>
+                    <span class="item-date">Dec 2023 – Oct 2024</span>
+                </div>
+                <div class="item-subtitle">Research Assistant</div>
+                <div class="item-desc">
+                    <ul>
+                        <li>Participated in research on Out-of-Distribution (OoD) detection; designed and conducted parameter ablation experiments.</li>
+                        <li>Assisted in theoretical analysis and figure creation for scientific reporting.</li>
+                        <li>Contributed to the work "InfoBound" which was accepted by TPAMI.</li>
+                        <li>Conducted experiments on Image Generation to explore new improvement methods.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- EDUCATION -->
@@ -216,112 +354,55 @@
             
             <div class="item">
                 <div class="item-header">
-                    <span class="item-title">University Name</span>
-                    <span class="item-date">2023 - Present</span>
+                    <span class="item-title">Shanghai Jiao Tong University (SJTU)</span>
+                    <span class="item-date">Sept 2022 - June 2026 (Expected)</span>
                 </div>
-                <div class="item-subtitle">Ph.D. in Computer Science</div>
-                <div class="item-desc">Advisor: Prof. Name Name</div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">University Name</span>
-                    <span class="item-date">2019 - 2023</span>
-                </div>
-                <div class="item-subtitle">B.S. in Computer Science</div>
-                <div class="item-desc">GPA: 4.0/4.0</div>
-            </div>
-        </section>
-
-        <!-- SELECTED EXPERIENCE -->
-        <section id="experience">
-            <h2>Selected Experience</h2>
-
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Tech Company Name</span>
-                    <span class="item-date">Summer 2023</span>
-                </div>
-                <div class="item-subtitle">Research Intern</div>
+                <div class="item-subtitle">B.S. in Artificial Intelligence</div>
                 <div class="item-desc">
-                    Worked on Large Language Model optimization. Proposed a new method for efficiency which resulted in a publication.
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Research Lab Name</span>
-                    <span class="item-date">2021 - 2022</span>
-                </div>
-                <div class="item-subtitle">Research Assistant</div>
-                <div class="item-desc">
-                    Assisted in developing data processing pipelines for autonomous driving datasets.
-                </div>
-            </div>
-        </section>
-
-        <!-- SELECTED PUBLICATIONS -->
-        <section id="selected-pubs">
-            <h2>Selected Publications</h2>
-            
-            <div class="pub-item">
-                <div class="pub-title">Title of Your Most Impressive Paper</div>
-                <div class="pub-authors"><span class="me">Your Name</span>, Co-author One, Co-author Two</div>
-                <div class="pub-venue">Conference on Computer Vision and Pattern Recognition (CVPR), 2024</div>
-                <div class="pub-links">
-                    <a href="#">[PDF]</a>
-                    <a href="#">[Code]</a>
-                    <a href="#">[Project Page]</a>
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Another Great Paper Title</div>
-                <div class="pub-authors">First Author, <span class="me">Your Name</span> (Co-first), Last Author</div>
-                <div class="pub-venue">International Conference on Machine Learning (ICML), 2023</div>
-                <div class="pub-links">
-                    <a href="#">[PDF]</a>
-                    <a href="#">[Code]</a>
+                    <strong>GPA:</strong> 85.8 / 100<br>
+                    <strong>Honors:</strong> Zhiyuan College Honors Scholarship (Top 5%, 2022)<br>
+                    <strong>Selected Coursework:</strong> Machine Learning (89), Deep Learning (89), Natural Language Processing (98), Computer Vision, Algorithm Design and Analysis (91), Mathematical Logic (94).
                 </div>
             </div>
         </section>
 
         <!-- ALL PUBLICATIONS -->
-        <section id="all-pubs">
+        <section id="all-publications">
             <h2>All Publications</h2>
-            <p style="color:#666; font-size:0.9rem; margin-bottom:20px;">* indicates equal contribution.</p>
+            <div class="equal-contrib">* indicates equal contribution.</div>
 
-            <!-- 2024 -->
-            <h3 style="font-size: 1.1rem; color: #444; margin-top: 20px;">2024</h3>
+            <!-- 2026 / Submission -->
+            <div class="pub-year-header">2026 / In Submission</div>
             
             <div class="pub-item">
-                <div class="pub-title">Paper Title 1</div>
-                <div class="pub-authors"><span class="me">Your Name</span>, Author B</div>
-                <div class="pub-venue">NeurIPS 2024</div>
-                <div class="pub-links"><a href="#">[PDF]</a></div>
+                <div class="pub-title">MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval</div>
+                <div class="pub-authors">
+                    Siyue Zhang*, <span class="me">Yuan Gao*</span>, Xiao Zhou*, Yilun Zhao, Chen Zhao
+                </div>
+                <div class="pub-venue">In Submission to ICLR 2026</div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a>
+                </div>
             </div>
 
-            <div class="pub-item">
-                <div class="pub-title">Paper Title 2</div>
-                <div class="pub-authors">Author A, <span class="me">Your Name</span></div>
-                <div class="pub-venue">ECCV 2024</div>
-                <div class="pub-links"><a href="#">[PDF]</a></div>
-            </div>
-
-            <!-- 2023 -->
-            <h3 style="font-size: 1.1rem; color: #444; margin-top: 20px;">2023</h3>
+            <!-- 2024 -->
+            <div class="pub-year-header">2024</div>
 
             <div class="pub-item">
-                <div class="pub-title">Older Paper Title</div>
-                <div class="pub-authors"><span class="me">Your Name</span>, Author C</div>
-                <div class="pub-venue">ICLR 2023</div>
-                <div class="pub-links"><a href="#">[PDF]</a></div>
+                <div class="pub-title">InfoBound: A Provable Information-Bounds Inspired Framework for Both OoD Generalization and OoD Detection</div>
+                <div class="pub-authors">
+                    Lin Zhu, Yifeng Yang, Zichao Nie, <span class="me">Yuan Gao</span>, Jiarui Li, Qinying Gu, Xinbing Wang, Chenghu Zhou, Nanyang Ye
+                </div>
+                <div class="pub-venue">TPAMI 2024</div>
+                <div class="pub-links">
+                    <a href="#">[Paper]</a>
+                </div>
             </div>
         </section>
 
         <!-- FOOTER -->
         <footer>
-            &copy; 2025 Your Name. Powered by GitHub Pages.
+            &copy; 2025 Yuan Gao. Powered by GitHub Pages.
         </footer>
     </div>
 
