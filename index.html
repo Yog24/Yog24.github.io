@@ -34,6 +34,19 @@
             padding: 50px 20px;
         }
 
+        /* --- Avatar / Profile Image --- */
+        .avatar {
+            width: 140px;            /* 头像宽度 */
+            height: 140px;           /* 头像高度 */
+            border-radius: 50%;      /* 50% 就是圆形 */
+            object-fit: cover;       /* 保证图片不被拉伸变形 */
+            margin-bottom: 20px;     /* 图片和名字之间的距离 */
+            border: 1px solid #eee;  /* 给头像加一个细细的边框 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 加一点点阴影，更有立体感 */
+            display: block;
+            margin-left: auto;       /* 配合 text-align: center 居中 */
+            margin-right: auto;
+        }
         /* --- Header --- */
         header {
             margin-bottom: 50px;
@@ -246,6 +259,8 @@
     <div class="container">
         <!-- HEADER -->
         <header>
+            <img src="avatar.jpg" alt="Yuan Gao" class="avatar">
+            
             <h1>Yuan Gao</h1>
             <div class="subtitle">Undergraduate Student @ Shanghai Jiao Tong University</div>
             <div class="social-links">
