@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Homepage</title>
+    <style>
+        /* --- Global Styles --- */
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --accent-color: #0066cc;
+            --bg-color: #fdfdfd;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Layout Container --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- Header / Hero Section --- */
+        header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Navigation (Optional, internal links) --- */
+        nav {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: var(--secondary-color);
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Section Styles --- */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* --- Content Lists --- */
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .item-date {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            white-space: nowrap;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+        }
+
+        /* --- Publication Styles --- */
+        .pub-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 3px solid #eee;
+        }
+        
+        .pub-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .pub-authors {
+            color: var(--secondary-color);
+        }
+
+        .pub-venue {
+            font-style: italic;
+            color: #444;
+        }
+
+        .pub-links a {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        /* Highlight your own name in publications */
+        .me {
+            font-weight: bold;
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 80px;
+            padding-bottom: 20px;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 600px) {
+            .item-header {
+                flex-direction: column;
+            }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Your Name</h1>
+            <div class="subtitle">Ph.D. Student / Researcher / Engineer</div>
+            <div class="social-links">
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://twitter.com" target="_blank">Twitter/X</a>
+                <a href="path/to/cv.pdf" target="_blank">CV (PDF)</a>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#selected-pubs">Selected Pubs</a>
+                <a href="#all-pubs">All Pubs</a>
+            </nav>
+        </header>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am currently a Ph.D. student at [University Name], advised by Prof. [Advisor Name]. 
+                My research interests include <strong>Artificial Intelligence</strong>, <strong>Computer Vision</strong>, and <strong>Machine Learning</strong>.
+            </p>
+            <p>
+                Previously, I obtained my Bachelor's degree from [University Name]. I am passionate about building systems that can solve real-world problems.
+            </p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">University Name</span>
+                    <span class="item-date">2023 - Present</span>
+                </div>
+                <div class="item-subtitle">Ph.D. in Computer Science</div>
+                <div class="item-desc">Advisor: Prof. Name Name</div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">University Name</span>
+                    <span class="item-date">2019 - 2023</span>
+                </div>
+                <div class="item-subtitle">B.S. in Computer Science</div>
+                <div class="item-desc">GPA: 4.0/4.0</div>
+            </div>
+        </section>
+
+        <!-- SELECTED EXPERIENCE -->
+        <section id="experience">
+            <h2>Selected Experience</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Tech Company Name</span>
+                    <span class="item-date">Summer 2023</span>
+                </div>
+                <div class="item-subtitle">Research Intern</div>
+                <div class="item-desc">
+                    Worked on Large Language Model optimization. Proposed a new method for efficiency which resulted in a publication.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Research Lab Name</span>
+                    <span class="item-date">2021 - 2022</span>
+                </div>
+                <div class="item-subtitle">Research Assistant</div>
+                <div class="item-desc">
+                    Assisted in developing data processing pipelines for autonomous driving datasets.
+                </div>
+            </div>
+        </section>
+
+        <!-- SELECTED PUBLICATIONS -->
+        <section id="selected-pubs">
+            <h2>Selected Publications</h2>
+            
+            <div class="pub-item">
+                <div class="pub-title">Title of Your Most Impressive Paper</div>
+                <div class="pub-authors"><span class="me">Your Name</span>, Co-author One, Co-author Two</div>
+                <div class="pub-venue">Conference on Computer Vision and Pattern Recognition (CVPR), 2024</div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a>
+                    <a href="#">[Code]</a>
+                    <a href="#">[Project Page]</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Another Great Paper Title</div>
+                <div class="pub-authors">First Author, <span class="me">Your Name</span> (Co-first), Last Author</div>
+                <div class="pub-venue">International Conference on Machine Learning (ICML), 2023</div>
+                <div class="pub-links">
+                    <a href="#">[PDF]</a>
+                    <a href="#">[Code]</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALL PUBLICATIONS -->
+        <section id="all-pubs">
+            <h2>All Publications</h2>
+            <p style="color:#666; font-size:0.9rem; margin-bottom:20px;">* indicates equal contribution.</p>
+
+            <!-- 2024 -->
+            <h3 style="font-size: 1.1rem; color: #444; margin-top: 20px;">2024</h3>
+            
+            <div class="pub-item">
+                <div class="pub-title">Paper Title 1</div>
+                <div class="pub-authors"><span class="me">Your Name</span>, Author B</div>
+                <div class="pub-venue">NeurIPS 2024</div>
+                <div class="pub-links"><a href="#">[PDF]</a></div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Paper Title 2</div>
+                <div class="pub-authors">Author A, <span class="me">Your Name</span></div>
+                <div class="pub-venue">ECCV 2024</div>
+                <div class="pub-links"><a href="#">[PDF]</a></div>
+            </div>
+
+            <!-- 2023 -->
+            <h3 style="font-size: 1.1rem; color: #444; margin-top: 20px;">2023</h3>
+
+            <div class="pub-item">
+                <div class="pub-title">Older Paper Title</div>
+                <div class="pub-authors"><span class="me">Your Name</span>, Author C</div>
+                <div class="pub-venue">ICLR 2023</div>
+                <div class="pub-links"><a href="#">[PDF]</a></div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            &copy; 2025 Your Name. Powered by GitHub Pages.
+        </footer>
+    </div>
+
+</body>
+</html>
